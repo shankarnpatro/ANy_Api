@@ -72,7 +72,7 @@ def customerRegister(custName,custEmail,custPwd):
         print(BearerToken)
         myUrl = reg_newApi
         h = {'Content-Type': 'application/json', 'Authorization': 'Bearer {0}'.format(BearerToken.decode("utf-8"))}
-        response = requests.post(myUrl, headers=h, json=customerInfo)
+        response = requests.post(url=myUrl, headers=h, json=customerInfo)
         print(response.status_code)
     except Exception as eobj:
         logger.error("Error while getting return token:%s"%eobj)
